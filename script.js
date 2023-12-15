@@ -10,7 +10,7 @@ const brand = form.elements.brand;
 const model = form.elements.model;
 const color = form.elements.color;
 
-const tempLib =[];
+const findTableList =[];
 
 findElement.addEventListener("input", findUpadate);
 
@@ -44,14 +44,12 @@ const cars = [new Car("Audi", "A8","Black",2008,"Sedan"),
               new Car("Volkswagen", "Passat","Black",2016,"Coupe"),
               new Car("BMW", "X5","Red",2023,"Crossover")];
 
-
-
 updateTable(cars);
 
-function updateTable(cars)
+function updateTable(array)
 {
     tableBody.innerHTML = '';
-    cars.forEach(item=>{
+    array.forEach(item=>{
         tableBody.innerHTML +=item.getHtml();
     })
 }
@@ -64,23 +62,25 @@ function findUpadate() {
         return;
     }
 
-    tempLib.splice(0);
+    findTableList.splice(0);
     cars.forEach(item => {
-        if(item.model.toLowerCase().indexOf(findElement.value.toLowerCase())!==-1)
-            tempLib.push(item);
+        if(item.model.toLowerCase()
+                     .indexOf(findElement.value.toLowerCase())!==-1)
+            findTableList.push(item);
     });
 
-    if(tempLib.length > 0)
+    if(findTableList.length > 0)
     {
         findDataList.innerHTML = "";
-        updateTable(tempLib);
-        if(findElement.value.length>=2)
+        updateTable(findTableList);
+        if(findElement.value.length >= 2)
         {
-            tempLib.forEach(item=>{
+            findTableList.forEach(item=>{
                 findDataList.innerHTML += `<option value="${item.model}"></option>` 
             });
         }
     }
+    else tableBody.innerHTML = '';
 }
 
 addBtn.onclick = (event) => {
@@ -93,7 +93,7 @@ addBtn.onclick = (event) => {
     }
     const car = new Car(brand.value, model.value, color.value,year.value,btype.value);
     cars.push(car);
-    tableBody.innerHTML +=car.getHtml();
+    tableBody.innerHTML += car.getHtml();
     brand.value = '';
     model.value = '';
     color.value = '';
@@ -102,7 +102,9 @@ addBtn.onclick = (event) => {
 
 clearBtn.onclick = () => {
     tableBody.innerHTML = '';
+    findDataList.innerHTML = '';
+    findElement.value = '';
     cars.splice(0);
-    tempLib.splice(0);
+    findTableList.splice(0);
 }
 
