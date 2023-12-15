@@ -55,6 +55,7 @@ function updateTable(array)
 }
 
 function findUpadate() {
+    if(cars.length === 0) return;
     if(!findElement.value)
     {
         updateTable(cars);
@@ -65,10 +66,10 @@ function findUpadate() {
     findTableList.splice(0);
     cars.forEach(item => {
         if(item.model.toLowerCase()
-                     .indexOf(findElement.value.toLowerCase())!==-1)
+                     .indexOf(findElement.value.toLowerCase()) !== -1)
             findTableList.push(item);
     });
-
+   
     if(findTableList.length > 0)
     {
         findDataList.innerHTML = "";
