@@ -1,0 +1,60 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+h1 {
+    text-align: center;
+    background-color: rgb(102, 102, 102);
+    color: white;
+    padding: 12px;
+    border-radius: 6px;
+    text-transform: uppercase;
+}
+
+.mt {
+    margin-top: 10px;
+}
+
+table {
+    width: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.fclear{
+   display: flex;
+   justify-content: space-between;
+
+}
+.fclear input{
+    margin-right: auto;
+    margin-left: 20px;
+}
+
+form{
+    width: 300px;
+}
+
+form input{
+    width: 230px;
+}
+
+div label{
+    display:flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+table thead {
+    background-color: rgb(100, 100, 100);
+    color: white;
+}
+
+table th {
+    text-align: left;
+}
+
+table th, table td {
+    padding: 6px;
+}

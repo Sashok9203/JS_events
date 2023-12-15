@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>My Auto</h1>
+    <h2>Create New Auto</h2>
+    <form name="creationForm">
+        <div class="mt">
+            <label>
+                <span>Year:</span>
+                <input name="year" type="number">
+            </label>
+            <label>
+                <span>Brand:</span>
+                <input name="brand" type="text">
+            </label>
+            <label>
+                <span>Model:</span>
+                <input name="model" type="text">
+            </label>
+            <label>
+                <span>Color:</span>
+                <input name="color" type="text">
+            </label>
+            <label>
+                <span>Body Type:</span>
+                <select id = "btype">
+                    <option value="Sedan" selected>Sedan</option>
+                    <option value="Crossover">Crossover</option>
+                    <option value="Coupe">Coupe</option> 
+                    <option value="Hatchback">Hatchback</option> 
+                </select>
+            </label>
+            
+           
+        </div>
+        <div class="mt">
+            <button type="reset">Cancel</button>
+            <button id="add" type="submit">Add</button>
+        </div>
+    </form>
+
+    <h2>Car Catalog</h2>
+    <div class ="fclear">
+        <span>Find by model</span>
+        <input list="findDataList" id = "find" type="text">
+        <button id="clear">Clear</button>
+    </div>
+    <datalist id="findDataList">
+        
+       
+      </datalist>
+    <table id="car-table" class="mt">
+        <thead>
+            <tr>
+                <th>№.</th>
+                <th>Year</th>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Color</th>
+                <th>Body type</th>
+            </tr>
+        </thead>
+        <tbody>
+           
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
